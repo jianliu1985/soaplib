@@ -97,7 +97,8 @@ class Application(Base):
             req_env['REQUEST_METHOD'].lower() == 'get'
             and (
                    req_env['QUERY_STRING'].endswith('wsdl')
-                or req_env['PATH_INFO'].endswith('wsdl')
+                or req_env['PATH_INFO'].endswith('wsdl') or  req_env['QUERY_STRING'].endswith('WSDL')
+                or req_env['PATH_INFO'].endswith('WSDL')
             )
         )
 
